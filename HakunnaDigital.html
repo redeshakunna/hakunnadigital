@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hakunna Digital: Tu página web lista en 72 horas. Elige tu plan, completa un formulario rápido y recibe una web profesional en 3 días." />
+  <meta name="keywords" content="página web en 72 horas, diseño web rápido, WordPress Colombia, landing page, web corporativa, ecommerce WooCommerce" />
+  <title>Hakunna Digital | Tu Web Lista en 72 Horas</title>
+
+  <!-- Open Graph (opcional) -->
+  <meta property="og:title" content="Tu Web Lista en 72 Horas | Hakunna Digital" />
+  <meta property="og:description" content="Elige tu plan, completa un formulario rápido y recibe una web profesional en 3 días." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      /* Paleta inspirada en tu fondo + acentos */
+      --bg: #ffffff;
+      --text: #101018;
+      --muted: #5a5a6a;
+      --line: rgba(16,16,24,.10);
+
+      --purple-900:#2a0038;
+      --purple-800:#3a0650;
+      --purple-700:#510a73;
+      --purple-600:#6c0bb0;
+      --purple-500:#8a2be2;
+
+      --blue-500:#1f7aff;    /* acento tipo gafas */
+      --yellow-500:#ffb400;  /* acento tipo botón */
+      --card:#ffffff;
+      --shadow: 0 16px 40px rgba(16,16,24,.10);
+      --radius: 18px;
+
+      --container: 1120px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+    a{ color: inherit; text-decoration: none; }
+    img{ max-width: 100%; height: auto; display: block; }
+
+    .container{
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 180px;
+    }
+    .brand img{
+      height: 92px;
+      width: auto;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap: 14px;
+    }
+    .nav a{
+      font-size: 14px;
+      color: rgba(16,16,24,.75);
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .nav a:hover{ background: rgba(138,43,226,.08); color: rgba(16,16,24,.95); }
+    .header-cta{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      cursor: pointer;
+      transition: transform .08s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--purple-600), var(--purple-500));
+      color: white;
+      box-shadow: 0 14px 30px rgba(108,11,176,.25);
+    }
+    .btn-primary:hover{ box-shadow: 0 18px 40px rgba(108,11,176,.30); }
+    .btn-secondary{
+      background: rgba(31,122,255,.08);
+      border-color: rgba(31,122,255,.25);
+      color: rgba(16,16,24,.92);
+    }
+    .btn-secondary:hover{ background: rgba(31,122,255,.12); }
+    .btn-whatsapp{
+      background: var(--yellow-500);
+      color: #1a1a1a;
+      box-shadow: 0 14px 30px rgba(255,180,0,.25);
+    }
+    .btn-whatsapp:hover{ box-shadow: 0 18px 40px rgba(255,180,0,.30); }
+    .btn-ghost{
+      background: transparent;
+      border-color: rgba(16,16,24,.16);
+      color: rgba(16,16,24,.88);
+    }
+    .btn-ghost:hover{ background: rgba(16,16,24,.04); }
+
+    /* Hero */
+    .hero{
+      position: relative;
+      overflow: hidden;
+      padding: 44px 0 26px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset: 0;
+      background:
+        radial-gradient(900px 480px at 20% 0%, rgba(138,43,226,.20), transparent 60%),
+        radial-gradient(900px 520px at 100% 30%, rgba(31,122,255,.14), transparent 55%),
+        linear-gradient(180deg, rgba(42,0,56,.06), transparent 55%);
+      pointer-events: none;
+    }
+    .hero-grid{
+      position: relative;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: center;
+    }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4.1vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    .hero p{
+      margin: 0 0 16px;
+      color: rgba(16,16,24,.75);
+      font-size: clamp(15px, 1.7vw, 18px);
+      max-width: 54ch;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .hero-badges{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(16,16,24,.80);
+      background: rgba(138,43,226,.08);
+      border: 1px solid rgba(138,43,226,.18);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .badge b{ color: rgba(16,16,24,.92); }
+    .hero-card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-card-top{
+      position: relative;
+      height: 190px;
+      background: linear-gradient(135deg, var(--purple-800), var(--purple-600));
+    }
+    .hero-card-top::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: url("./Background.png") center/cover no-repeat;
+      opacity: .55;
+      mix-blend-mode: screen;
+      pointer-events:none;
+    }
+    .hero-card-body{
+      padding: 16px;
+    }
+    .mini-list{
+      display:grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .mini-item{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color: rgba(16,16,24,.80);
+      font-size: 14px;
+    }
+    .icon{
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      margin-top: 2px;
+      color: var(--purple-600);
+    }
+
+    /* Sections */
+    section{
+      padding: 34px 0;
+    }
+    .section-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .section-title h2{
+      margin: 0;
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: -0.6px;
+    }
+    .section-title p{
+      margin: 0;
+      color: rgba(16,16,24,.70);
+      max-width: 60ch;
+      font-size: 15px;
+    }
+
+    /* Pricing */
+    .pricing-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 26px rgba(16,16,24,.08);
+      padding: 16px;
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card.highlight{
+      border-color: rgba(138,43,226,.35);
+      box-shadow: 0 18px 45px rgba(108,11,176,.16);
+      position: relative;
+      overflow: hidden;
+    }
+    .card.highlight::before{
+      content:"Más popular";
+      position:absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,180,0,.96);
+      color: #121212;
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    .plan-name{
+      display:flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .plan-name small{
+      color: rgba(16,16,24,.62);
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .plan-name strong{
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    .price{
+      font-size: 26px;
+      font-weight: 950;
+      letter-spacing: -0.6px;
+    }
+    .price span{
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(16,16,24,.55);
+      margin-left: 6px;
+    }
+    .features{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display:grid;
+      gap: 8px;
+      color: rgba(16,16,24,.78);
+      font-size: 14px;
+    }
+    .features li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .check{
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      margin-top: 2px;
+      color: var(--blue-500);
+    }
+    .card .btn{ width: 100%; }
+
+    /* How it works */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .step{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      padding: 16px;
+      background: linear-gradient(180deg, rgba(138,43,226,.06), rgba(255,255,255,1));
+      box-shadow: 0 10px 26px rgba(16,16,24,.06);
+    }
+    .step .num{
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 950;
+      color: white;
+      background: linear-gradient(135deg, var(--purple-600), var(--purple-500));
+      margin-bottom: 10px;
+    }
+    .step h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .step p{
+      margin: 0;
+      color: rgba(16,16,24,.72);
+      font-size: 14px;
+    }
+
+    /* Included / Not included */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .panel{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: 0 10px 26px rgba(16,16,24,.06);
+      padding: 16px;
+    }
+    .panel h3{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+    .panel ul{
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(16,16,24,.74);
+      display:grid;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    /* Form Wizard */
+    .wizard{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .wizard-head{
+      padding: 16px;
+      background: linear-gradient(135deg, var(--purple-800), var(--purple-600));
+      color: white;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .wizard-head .title{
+      display:flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .wizard-head .title strong{ font-size: 16px; }
+    .wizard-head .title small{ opacity: .86; font-weight: 700; }
+
+    .progress{
+      width: 170px;
+      height: 10px;
+      background: rgba(255,255,255,.22);
+      border-radius: 999px;
+      overflow:hidden;
+      flex: 0 0 auto;
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .bar{
+      height: 100%;
+      width: 25%;
+      background: rgba(255,180,0,.95);
+      border-radius: 999px;
+      transition: width .25s ease;
+    }
+
+    form{
+      padding: 16px;
+      display:grid;
+      gap: 12px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    label{
+      font-size: 13px;
+      font-weight: 900;
+      color: rgba(16,16,24,.80);
+      display:block;
+      margin-bottom: 6px;
+    }
+    input, select, textarea{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(16,16,24,.14);
+      outline: none;
+      font-size: 14px;
+      background: #fff;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(138,43,226,.45);
+      box-shadow: 0 0 0 4px rgba(138,43,226,.12);
+    }
+    textarea{ min-height: 96px; resize: vertical; }
+
+    .wizard-actions{
+      display:flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .wizard-actions .btn{ width: auto; }
+
+    .step-pane{ display:none; }
+    .step-pane.active{ display:block; }
+
+    .note{
+      font-size: 13px;
+      color: rgba(16,16,24,.66);
+      margin: 0;
+    }
+    .success{
+      border: 1px solid rgba(31,122,255,.22);
+      background: rgba(31,122,255,.06);
+      padding: 12px;
+      border-radius: 14px;
+      color: rgba(16,16,24,.85);
+      font-size: 14px;
+    }
+
+    /* Payment */
+    .payment{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    /* FAQ */
+    .faq{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: 0 10px 26px rgba(16,16,24,.06);
+      overflow: hidden;
+    }
+    .faq-item{ border-top: 1px solid var(--line); }
+    .faq-item:first-child{ border-top: 0; }
+    .faq-q{
+      width: 100%;
+      text-align:left;
+      background: transparent;
+      border: 0;
+      padding: 14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      font-weight: 950;
+      color: rgba(16,16,24,.88);
+    }
+    .faq-a{
+      padding: 0 16px 14px;
+      color: rgba(16,16,24,.72);
+      font-size: 14px;
+      display:none;
+    }
+    .faq-item.open .faq-a{ display:block; }
+    .chev{
+      width: 18px;
+      height: 18px;
+      transition: transform .2s ease;
+      color: rgba(16,16,24,.55);
+      flex: 0 0 auto;
+    }
+    .faq-item.open .chev{ transform: rotate(180deg); }
+
+    /* Final CTA */
+    .final-cta{
+      border-radius: calc(var(--radius) + 6px);
+      border: 1px solid rgba(138,43,226,.18);
+      background: radial-gradient(900px 320px at 20% 20%, rgba(255,180,0,.14), transparent 55%),
+                  radial-gradient(900px 320px at 90% 50%, rgba(31,122,255,.14), transparent 55%),
+                  linear-gradient(135deg, rgba(58,6,80,.06), rgba(255,255,255,1));
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .final-cta h2{
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.4px;
+    }
+    .final-cta p{
+      margin: 6px 0 0;
+      color: rgba(16,16,24,.70);
+      font-size: 14px;
+      max-width: 60ch;
+    }
+
+    /* Footer */
+    footer{
+      padding: 22px 0 36px;
+      border-top: 1px solid var(--line);
+      color: rgba(16,16,24,.70);
+      font-size: 13px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+    .social{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(16,16,24,.12);
+      background: rgba(16,16,24,.02);
+      font-weight: 900;
+      color: rgba(16,16,24,.78);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .pricing-grid{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      .payment{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
+      .progress{ width: 140px; }
+    }
+    @media (max-width: 560px){
+      .grid-2{ grid-template-columns: 1fr; }
+      .brand img{ height: 32px; }
+      .btn{ padding: 12px 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <!-- Logo horizontal -->
+          <!-- <img src="./LogoHorizotal.png" alt="Hakunna Digital" />-->
+		  <img src="https://i.ibb.co/Xk89d4jd/Logo-Horizotal.png" alt="Logo-Horizotal" border="0"/>
+        </a>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <a href="#planes">Planes</a>
+          <a href="#proceso">Cómo funciona</a>
+          <a href="#formulario">Formulario</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="header-cta">
+          <a class="btn btn-secondary" href="#planes">Elegir plan</a>
+          <a class="btn btn-whatsapp" id="waTop" href="#" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="inicio" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1>Tu página web lista en <span style="color:var(--purple-600)">72 horas</span></h1>
+          <p>
+            Elige tu plan, completa un formulario corto y recibe una web profesional en solo 3 días.
+            Sin enredos, sin procesos eternos, y con enfoque en resultados.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#planes">Elegir mi plan</a>
+            <a class="btn btn-whatsapp" id="waHero" href="#" rel="noopener">Hablar por WhatsApp</a>
+            <a class="btn btn-ghost" href="#formulario">Quiero llenar el formulario</a>
+          </div>
+
+          <div class="hero-badges" aria-label="Beneficios clave">
+            <span class="badge">⏱️ <b>Entrega rápida:</b> 72 horas</span>
+            <span class="badge">📱 100% responsive</span>
+            <span class="badge">🎯 Optimizada para leads</span>
+            <span class="badge">✅ Alcance claro, cero sorpresas</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumen de valor">
+          <div class="hero-card-top" aria-hidden="true"></div>
+          <div class="hero-card-body">
+            <ul class="mini-list">
+              <li class="mini-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Web entregada en 72 horas (desde que tengamos toda la info y el pago confirmado).
+              </li>
+              <li class="mini-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                </svg>
+                Diseño profesional, limpio y moderno (sin “párrafos eternos”).
+              </li>
+              <li class="mini-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                </svg>
+                Enfoque conversiones: CTA claros, formulario, WhatsApp y estructura de ventas.
+              </li>
+              <li class="mini-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 21s-7-4.5-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6.5-7 11-7 11z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                </svg>
+                Comunicación directa por WhatsApp: confirmamos y arrancamos.
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Value Prop (bullets cortos) -->
+  <section aria-label="Propuesta de valor">
+    <div class="container">
+      <div class="section-title">
+        <h2>Lo que te llevas (sin letra pequeña)</h2>
+        <p>Simple y directo: rapidez, claridad y una web que se vea brutal en el celular.</p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3>Incluye</h3>
+          <ul>
+            <li>Entrega en 72 horas (cuando esté todo listo: info + pago).</li>
+            <li>Diseño profesional y moderno.</li>
+            <li>Adaptación móvil (responsive).</li>
+            <li>Optimización básica para leads y conversiones.</li>
+            <li>Alcance claro y costos transparentes.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Ideal para</h3>
+          <ul>
+            <li>Emprendedores que necesitan vender ya.</li>
+            <li>Negocios que quieren verse más profesionales.</li>
+            <li>Marcas personales que requieren presencia rápida.</li>
+            <li>Servicios que necesitan WhatsApp + formulario para captar clientes.</li>
+            <li>Personas sin tiempo para “reunión 1, reunión 2, reunión 38”.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="planes" aria-label="Planes y precios">
+    <div class="container">
+      <div class="section-title">
+        <h2>Elige tu plan</h2>
+        <p>Selecciona el que mejor te sirva. Cada botón te lleva al formulario con el plan preseleccionado.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <article class="card">
+          <div class="plan-name">
+            <small>PLAN 1</small>
+            <strong>Landing Page Express</strong>
+          </div>
+          <div class="price">COP $590.000 <span>pago único</span></div>
+          <ul class="features">
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Sitio de 1 sola página
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Diseño responsive
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Botón de WhatsApp o formulario
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              SEO básico
+            </li>
+          </ul>
+          <button class="btn btn-primary" data-plan="Landing Page Express">Iniciar Landing</button>
+        </article>
+
+        <!-- Plan 2 -->
+        <article class="card highlight">
+          <div class="plan-name">
+            <small>PLAN 2</small>
+            <strong>Web Corporativa</strong>
+          </div>
+          <div class="price">COP $890.000 <span>pago único</span></div>
+          <ul class="features">
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Hasta 5 secciones
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Sitio en WordPress
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Formularios + WhatsApp
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              SEO básico
+            </li>
+          </ul>
+          <button class="btn btn-primary" data-plan="Web Corporativa">Iniciar Web Corporativa</button>
+        </article>
+
+        <!-- Plan 3 -->
+        <article class="card">
+          <div class="plan-name">
+            <small>PLAN 3</small>
+            <strong>E-commerce Básico</strong>
+          </div>
+          <div class="price">COP $1.200.000 <span>pago único</span></div>
+          <ul class="features">
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              WordPress + WooCommerce
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Hasta 10 productos
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Configuración de pasarela de pago
+            </li>
+            <li>
+              <svg class="check" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Envíos y checkout básico
+            </li>
+          </ul>
+          <button class="btn btn-primary" data-plan="E-commerce Básico">Iniciar E-commerce</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="proceso" aria-label="Cómo funciona">
+    <div class="container">
+      <div class="section-title">
+        <h2>Cómo funciona</h2>
+        <p>3 pasos, cero drama. Lo hacemos rápido porque lo hacemos ordenado.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Elige el plan y llena el formulario (2 minutos)</h3>
+          <p>Nos dejas lo esencial: qué haces, contacto, referencias y objetivos.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Confirmamos detalles y pago por WhatsApp</h3>
+          <p>Te validamos alcance, resolvemos dudas y te enviamos el link de pago.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Recibes tu web en 72 horas</h3>
+          <p>La entrega empieza cuando tengamos toda la info + pago confirmado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Included / Not included -->
+  <section aria-label="Qué está incluido y qué no">
+    <div class="container">
+      <div class="section-title">
+        <h2>Qué incluye / qué no incluye</h2>
+        <p>Transparencia total. Esto evita malentendidos y acelera la entrega.</p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <h3>Incluye</h3>
+          <ul>
+            <li>1 ronda de ajustes menores (texto/orden/pequeños cambios).</li>
+            <li>Diseño responsive (móvil + escritorio).</li>
+            <li>SEO básico (títulos, metas y estructura).</li>
+            <li>Instalación y configuración base de WordPress (si aplica).</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>No incluye</h3>
+          <ul>
+            <li>Desarrollo a medida (funcionalidades personalizadas complejas).</li>
+            <li>Integraciones avanzadas (CRM, automatizaciones complejas, etc.).</li>
+            <li>Branding desde cero (logo/identidad completa).</li>
+            <li>Cargas masivas (catálogos grandes, blogs antiguos, migraciones pesadas).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Wizard -->
+  <section id="formulario" aria-label="Formulario">
+    <div class="container">
+      <div class="section-title">
+        <h2>Formulario rápido (Wizard)</h2>
+        <p>Completa esto y avanzamos. Entre más claro, más rápido sale tu web 🚀</p>
+      </div>
+
+      <div class="wizard" role="region" aria-label="Wizard de formulario">
+        <div class="wizard-head">
+          <div class="title">
+            <strong>Inicia tu “Web en 72 horas”</strong>
+            <small id="wizardStepText">Paso 1 de 4</small>
+          </div>
+          <div class="progress" aria-label="Progreso">
+            <div class="bar" id="progressBar"></div>
+          </div>
+        </div>
+
+        <form id="leadForm" autocomplete="on">
+          <!-- Step 1 -->
+          <div class="step-pane active" data-step="1">
+            <div class="grid-2">
+              <div>
+                <label for="plan">Plan seleccionado</label>
+                <select id="plan" name="plan" required>
+                  <option value="" disabled selected>Selecciona un plan</option>
+                  <option>Landing Page Express</option>
+                  <option>Web Corporativa</option>
+                  <option>E-commerce Básico</option>
+                </select>
+              </div>
+              <div>
+                <label for="businessName">Nombre del negocio / marca</label>
+                <input id="businessName" name="businessName" type="text" placeholder="Ej: Hakunna Digital" required />
+              </div>
+            </div>
+
+            <div>
+              <label for="businessDesc">¿Qué hace tu negocio? (1-2 líneas)</label>
+              <textarea id="businessDesc" name="businessDesc" placeholder="Ej: Agencia de marketing digital enfocada en web rápida y conversión." required></textarea>
+            </div>
+
+            <p class="note">Tip: si tienes una oferta principal (servicio/producto estrella), menciónala. Eso mejora el copy.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-pane" data-step="2">
+            <div class="grid-2">
+              <div>
+                <label for="whatsapp">Número de WhatsApp</label>
+                <input id="whatsapp" name="whatsapp" type="tel" placeholder="Ej: +57 300 000 0000" required />
+              </div>
+              <div>
+                <label for="email">Correo</label>
+                <input id="email" name="email" type="email" placeholder="Ej: hola@tumarca.com" required />
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div>
+                <label for="logo">Logo (opcional)</label>
+                <input id="logo" name="logo" type="file" accept="image/*" />
+              </div>
+              <div>
+                <label for="references">Webs de referencia (opcional)</label>
+                <input id="references" name="references" type="text" placeholder="Ej: https://sitio1.com, https://sitio2.com" />
+              </div>
+            </div>
+
+            <p class="note">Si no tienes logo: no pasa nada. Podemos trabajar con tipografía y colores básicos mientras lo resuelves.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-pane" data-step="3">
+            <div>
+              <label for="goal">Objetivo principal de la web</label>
+              <select id="goal" name="goal" required>
+                <option value="" disabled selected>Selecciona un objetivo</option>
+                <option>Generar leads (WhatsApp / Formulario)</option>
+                <option>Vender productos (E-commerce)</option>
+                <option>Mostrar servicios y credibilidad (Corporativa)</option>
+                <option>Otra</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="notes">Notas adicionales (opcional)</label>
+              <textarea id="notes" name="notes" placeholder="Ej: Quiero que el botón de WhatsApp sea lo principal, y mostrar 3 servicios con precios."></textarea>
+            </div>
+
+            <div class="success" style="display:none" id="previewBox"></div>
+            <p class="note">En el siguiente paso generamos tu mensaje listo para WhatsApp.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-pane" data-step="4">
+            <div class="success">
+              <strong>¡Gracias!</strong> Nuestro equipo te contactará por WhatsApp para confirmar el pago e iniciar la entrega en 72 horas.
+              <div style="height:10px"></div>
+              <span style="font-weight:900">Importante:</span> El pago es necesario para iniciar el proyecto.
+            </div>
+
+            <div class="panel" style="margin-top:12px">
+              <h3 style="margin:0 0 10px">Enviar por WhatsApp</h3>
+              <p class="note" style="margin:0 0 10px">
+                Al dar clic, se abrirá WhatsApp con un mensaje precargado:
+                <b>“Hola, quiero iniciar el plan Web en 72 Horas. Ya completé el formulario.”</b>
+              </p>
+              <a class="btn btn-whatsapp" id="waFromForm" href="#" rel="noopener" style="width:100%">Enviar WhatsApp ahora</a>
+            </div>
+          </div>
+
+          <div class="wizard-actions">
+            <button type="button" class="btn btn-ghost" id="backBtn" disabled>Volver</button>
+            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+              <button type="button" class="btn btn-secondary" id="saveBtn">Guardar y previsualizar</button>
+              <button type="button" class="btn btn-primary" id="nextBtn">Siguiente</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment + WhatsApp -->
+  <section aria-label="Pago y WhatsApp">
+    <div class="container">
+      <div class="section-title">
+        <h2>Pago y arranque</h2>
+        <p>Pagas, confirmamos por WhatsApp y arrancamos. Sin vueltas.</p>
+      </div>
+
+      <div class="payment">
+        <div class="panel">
+          <h3>Regla clara</h3>
+          <ul>
+            <li><b>El pago es requerido</b> para iniciar el proyecto.</li>
+            <li>Los links de pago se envían por WhatsApp al confirmar detalles.</li>
+            <li>Las <b>72 horas</b> empiezan cuando tengamos: información completa + pago confirmado.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>WhatsApp directo</h3>
+          <p class="note" style="margin:0 0 10px">
+            ¿Listo para arrancar? Escríbenos y di: “Ya llené el formulario”.
+          </p>
+          <a class="btn btn-whatsapp" id="waPayment" href="#" rel="noopener" style="width:100%">Hablar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-label="Preguntas frecuentes">
+    <div class="container">
+      <div class="section-title">
+        <h2>FAQ</h2>
+        <p>Las dudas típicas (y las respuestas sin humo).</p>
+      </div>
+
+      <div class="faq" role="list">
+        <div class="faq-item open" role="listitem">
+          <button class="faq-q" type="button">
+            ¿Cuándo empiezan a contar las 72 horas?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-a">
+            Empieza cuando tengamos <b>toda la información</b> (formulario completo + recursos necesarios) y el <b>pago confirmado</b>.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" type="button">
+            ¿Qué pasa si no tengo logo?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-a">
+            No te frenes. Podemos montar una versión profesional con tipografía + colores, y luego integras el logo cuando lo tengas.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" type="button">
+            ¿Puedo pedir cambios extra?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-a">
+            Sí. Incluye 1 ronda de ajustes menores. Cambios adicionales o ampliaciones de alcance se cotizan aparte (y pueden extender tiempos).
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" type="button">
+            ¿El hosting está incluido?
+            <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-a">
+            No por defecto. Si ya tienes hosting, perfecto. Si no, te recomendamos opciones y te ayudamos a dejarlo listo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section aria-label="Llamado final a la acción">
+    <div class="container">
+      <div class="final-cta">
+        <div>
+          <h2>¿Listo para tu web en 72 horas?</h2>
+          <p>Elige el plan, llena el formulario y arrancamos por WhatsApp. Rápido, claro y con enfoque en vender.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="#planes">Elegir mi plan</a>
+          <a class="btn btn-whatsapp" id="waFinal" href="#" rel="noopener">WhatsApp ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap">
+          <img src="https://i.ibb.co/4nzvwYcN/Only-Logo.png" alt="Hakunna Digital" style="height:70px; width:auto" />
+		  <span class="pill">Hakunna Digital</span>
+          <span class="pill" id="footerEmail">Email: hakunnadigital@gmail</span>
+          <span class="pill" id="footerWhatsApp">WhatsApp: +57 312 6070588</span>
+        </div>
+        <div class="social" aria-label="Redes sociales">
+          <!-- Reemplaza los href con tus links reales -->
+          <a class="pill" href="#" aria-label="Facebook">f</a>
+          <a class="pill" href="#" aria-label="YouTube">▶</a>
+          <a class="pill" href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; color: rgba(16,16,24,.55);">
+        <div><b>Disclaimer:</b> El tiempo de entrega depende de recibir información completa y confirmación de pago. El alcance se limita a lo incluido en el plan seleccionado.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // =========================
+    // CONFIG (cámbialo y listo)
+    // =========================
+    const WHATSAPP_NUMBER = "573126070588"; // <-- Reemplaza: ej "573001234567" (sin +, sin espacios)
+    const WHATSAPP_PREFILL = "Hola, quiero iniciar el plan Web en 72 Horas. Ya completé el formulario.";
+    const EMAIL_CONTACT = "hakunnadigital@gmail.com";
+
+    // Set footer contact
+    document.getElementById("footerEmail").textContent = "Email: " + EMAIL_CONTACT;
+
+    // WhatsApp links
+    const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+    const waButtons = ["waTop","waHero","waPayment","waFinal","waFromForm"];
+    waButtons.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.href = waLink(WHATSAPP_PREFILL);
+    });
+
+    // Footer WhatsApp display
+    const footerWA = document.getElementById("footerWhatsApp");
+    if (footerWA) footerWA.textContent = "WhatsApp: +" + WHATSAPP_NUMBER;
+
+    // =========================
+    // Pricing -> Form (plan preselect)
+    // =========================
+    const planSelect = document.getElementById("plan");
+    document.querySelectorAll("[data-plan]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const plan = btn.getAttribute("data-plan");
+        planSelect.value = plan;
+        document.getElementById("formulario").scrollIntoView({behavior:"smooth"});
+        // si el usuario estaba en un paso distinto, lo regresamos al 1 para que sea claro
+        setStep(1);
+      });
+    });
+
+    // =========================
+    // FAQ accordion
+    // =========================
+    document.querySelectorAll(".faq-q").forEach(q => {
+      q.addEventListener("click", () => {
+        const item = q.closest(".faq-item");
+        item.classList.toggle("open");
+      });
+    });
+
+    // =========================
+    // Wizard logic
+    // =========================
+    const panes = Array.from(document.querySelectorAll(".step-pane"));
+    const backBtn = document.getElementById("backBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const saveBtn = document.getElementById("saveBtn");
+    const stepText = document.getElementById("wizardStepText");
+    const bar = document.getElementById("progressBar");
+    const form = document.getElementById("leadForm");
+    const previewBox = document.getElementById("previewBox");
+
+    let current = 1;
+    const total = 4;
+
+    function setStep(n){
+      current = Math.max(1, Math.min(total, n));
+      panes.forEach(p => p.classList.toggle("active", Number(p.dataset.step) === current));
+      backBtn.disabled = current === 1;
+      nextBtn.textContent = current === total ? "Listo" : "Siguiente";
+      stepText.textContent = `Paso ${current} de ${total}`;
+      bar.style.width = `${(current / total) * 100}%`;
+
+      // mostrar/ocultar botones auxiliares
+      saveBtn.style.display = (current >= 3) ? "none" : "inline-flex";
+    }
+
+    function validateStep(step){
+      // Validación simple por campos requeridos visibles en el paso
+      const pane = panes.find(p => Number(p.dataset.step) === step);
+      const required = Array.from(pane.querySelectorAll("[required]"));
+      for (const field of required){
+        if (!field.value || (field.type === "email" && !field.value.includes("@"))){
+          field.focus();
+          field.scrollIntoView({behavior:"smooth", block:"center"});
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function buildSummary(){
+      const data = new FormData(form);
+      const plan = data.get("plan") || "(sin plan)";
+      const name = data.get("businessName") || "(sin nombre)";
+      const desc = data.get("businessDesc") || "";
+      const wa = data.get("whatsapp") || "";
+      const email = data.get("email") || "";
+      const refs = data.get("references") || "";
+      const goal = data.get("goal") || "";
+
+      return `
+        <div style="font-weight:950; margin-bottom:8px">Resumen</div>
+        <div style="display:grid; gap:6px">
+          <div><b>Plan:</b> ${escapeHtml(plan)}</div>
+          <div><b>Negocio:</b> ${escapeHtml(name)}</div>
+          <div><b>Objetivo:</b> ${escapeHtml(goal || "—")}</div>
+          <div><b>WhatsApp:</b> ${escapeHtml(wa || "—")}</div>
+          <div><b>Email:</b> ${escapeHtml(email || "—")}</div>
+          <div><b>Referencias:</b> ${escapeHtml(refs || "—")}</div>
+          <div><b>Descripción:</b> ${escapeHtml(desc || "—")}</div>
+        </div>
+      `.trim();
+    }
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, (m) => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+      }[m]));
+    }
+
+    saveBtn.addEventListener("click", () => {
+      if (!validateStep(1) || !validateStep(2)) return;
+      previewBox.innerHTML = buildSummary();
+      previewBox.style.display = "block";
+      setStep(3);
+    });
+
+    backBtn.addEventListener("click", () => setStep(current - 1));
+
+    nextBtn.addEventListener("click", () => {
+      if (current === 1 && !validateStep(1)) return;
+      if (current === 2 && !validateStep(2)) return;
+      if (current === 3 && !validateStep(3)) return;
+
+      if (current < total){
+        // Si llegamos al paso 3 sin preview, lo generamos
+        if (current === 2){
+          previewBox.innerHTML = buildSummary();
+          previewBox.style.display = "block";
+        }
+        setStep(current + 1);
+
+        // En el paso 4, personalizamos el WhatsApp con el plan
+        if (current === 4){
+          const plan = planSelect.value || "Web en 72 Horas";
+          const msg = `Hola, quiero iniciar el plan "${plan}" - Web en 72 Horas. Ya completé el formulario.`;
+          const el = document.getElementById("waFromForm");
+          if (el) el.href = waLink(msg);
+        }
+      } else {
+        // Último paso: aquí podrías enviar a tu backend si quieres.
+        // Por ahora, solo dejamos listo el WhatsApp.
+        const plan = planSelect.value || "Web en 72 Horas";
+        const msg = `Hola, quiero iniciar el plan "${plan}" - Web en 72 Horas. Ya completé el formulario.`;
+        window.open(waLink(msg), "_blank", "noopener");
+      }
+    });
+
+    // Iniciar
+    setStep(1);
+  </script>
+</body>
+</html>
