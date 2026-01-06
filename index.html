@@ -726,7 +726,227 @@
     grid-template-columns: 1fr;
   }
 }
+/* ========= CTA HERO (como la imagen) ========= */
+.cta-hero{
+  padding: 54px 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2c6cff 0%, #7a2cff 55%, #5c2cff 100%);
+  color: #fff;
+}
+.cta-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("./Background.png") center/cover no-repeat;
+  opacity: .22;
+  pointer-events:none;
+}
+.cta-hero-inner{
+  position: relative;
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.cta-hero-inner h2{
+  margin: 0 0 10px;
+  font-size: clamp(30px, 4.2vw, 52px);
+  font-weight: 950;
+  letter-spacing: -0.8px;
+}
+.cta-hero-inner p{
+  margin: 0 auto 18px;
+  max-width: 68ch;
+  font-size: 16px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.6;
+}
 
+.cta-hero-actions{
+  display:flex;
+  gap: 12px;
+  justify-content:center;
+  flex-wrap: wrap;
+  margin: 18px 0 22px;
+}
+
+.btn-light{
+  background: #fff;
+  color: #1a1a1a;
+  border: 1px solid rgba(255,255,255,.65);
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+}
+.btn-light:hover{ box-shadow: 0 18px 38px rgba(0,0,0,.22); }
+
+.btn-outline-light{
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.35);
+}
+.btn-outline-light:hover{
+  background: rgba(255,255,255,.16);
+}
+
+.cta-hero-cards{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+.cta-mini-card{
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 16px;
+  padding: 16px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  min-height: 110px;
+  backdrop-filter: blur(6px);
+}
+.cta-mini-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 18px;
+}
+.cta-mini-text{
+  font-weight: 900;
+  color: rgba(255,255,255,.92);
+}
+
+.cta-hero-note{
+  margin: 18px auto 0;
+  max-width: 740px;
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: rgba(255,255,255,.88);
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter: blur(6px);
+}
+.cta-hero-note .bolt{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.16);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Responsive CTA */
+@media (max-width: 900px){
+  .cta-hero-cards{ grid-template-columns: 1fr; }
+}
+
+/* ========= FOOTER DARK (como la imagen) ========= */
+.footer-dark{
+  background: #0b1424;
+  color: rgba(255,255,255,.85);
+  padding: 40px 0 26px;
+}
+.footer-top{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.footer-col h3{
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 950;
+  color: #fff;
+}
+.footer-col h4{
+  margin: 6px 0 12px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+}
+.footer-col p{
+  margin: 0;
+  color: rgba(255,255,255,.70);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.footer-contact{
+  display:grid;
+  gap: 12px;
+}
+.footer-contact a{
+  display:block;
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.86);
+}
+.footer-contact a strong{ color: #fff; }
+
+.footer-links{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap: 10px;
+}
+.footer-links a{
+  color: rgba(255,255,255,.72);
+}
+.footer-links a:hover{ color: #fff; }
+
+.footer-line{
+  border:0;
+  height:1px;
+  background: rgba(255,255,255,.10);
+  margin: 22px 0;
+}
+
+.footer-important{
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 14px;
+  color: rgba(255,255,255,.70);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.footer-bottom{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  color: rgba(255,255,255,.60);
+  font-size: 13px;
+}
+.footer-legal{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+}
+.footer-legal a{
+  color: rgba(255,255,255,.65);
+}
+.footer-legal a:hover{ color: #fff; }
+
+/* Responsive footer */
+@media (max-width: 980px){
+  .footer-top{ grid-template-columns: 1fr; }
+}
   </style>
 </head>
 
@@ -1261,43 +1481,89 @@
   </section>
 
   <!-- Final CTA -->
-  <section aria-label="Llamado final a la acción">
-    <div class="container">
-      <div class="final-cta">
-        <div>
-          <h2>¿Listo para tu web en 72 horas?</h2>
-          <p>Elige el plan, llena el formulario y arrancamos por WhatsApp. Rápido, claro y con enfoque en vender.</p>
+  <section class="cta-hero" aria-label="Llamado final a la acción">
+  <div class="container">
+    <div class="cta-hero-inner">
+      <h2>¿Listo para tener tu página web en 72 horas?</h2>
+      <p>
+        Únete a cientos de negocios que lanzaron su sitio profesional en solo 3 días.
+        Sin esperas largas, sin complicaciones.
+      </p>
+
+      <div class="cta-hero-actions">
+        <a class="btn btn-light" href="#planes">Elegir mi plan <span aria-hidden="true">→</span></a>
+        <a class="btn btn-outline-light" id="waCtaHero" href="#" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+
+      <div class="cta-hero-cards">
+        <div class="cta-mini-card">
+          <div class="cta-mini-icon">⚡</div>
+          <div class="cta-mini-text">Garantía 72 horas</div>
         </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap">
-          <a class="btn btn-primary" href="#planes">Elegir mi plan</a>
-          <a class="btn btn-whatsapp" id="waFinal" href="#" rel="noopener">WhatsApp ahora</a>
+        <div class="cta-mini-card">
+          <div class="cta-mini-icon">✨</div>
+          <div class="cta-mini-text">Calidad profesional</div>
+        </div>
+        <div class="cta-mini-card">
+          <div class="cta-mini-icon">🛡️</div>
+          <div class="cta-mini-text">Precios transparentes</div>
         </div>
       </div>
+
+      <div class="cta-hero-note">
+        <span class="bolt">⚡</span>
+        Cupos limitados cada mes para asegurar una entrega con calidad
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap">
-          <img src="https://i.ibb.co/4nzvwYcN/Only-Logo.png" alt="Hakunna Digital" style="height:70px; width:auto" />
-		  <span class="pill">Hakunna Digital</span>
-          <span class="pill" id="footerEmail">Email: hakunnadigital@gmail</span>
-          <span class="pill" id="footerWhatsApp">WhatsApp: +57 312 6070588</span>
-        </div>
-        <div class="social" aria-label="Redes sociales">
-          <!-- Reemplaza los href con tus links reales -->
-          <a class="pill" href="#" aria-label="Facebook">f</a>
-          <a class="pill" href="#" aria-label="YouTube">▶</a>
-          <a class="pill" href="#" aria-label="Instagram">◎</a>
+  <footer class="footer-dark" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h3>Hakunna Digital</h3>
+        <p>Webs profesionales entregadas en 72 horas. Rápidas, confiables y hechas para convertir.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contáctanos</h4>
+        <div class="footer-contact">
+          <a id="waFooterLink" href="#" rel="noopener">💬 WhatsApp<br><strong>+57 312 607 0588</strong></a>
+          <a href="mailto:info@hakunnadigital.com">✉️ Email<br><strong>info@hakunnadigital.com</strong></a>
         </div>
       </div>
 
-      <div style="margin-top:12px; color: rgba(16,16,24,.55);">
-        <div><b>Disclaimer:</b> El tiempo de entrega depende de recibir información completa y confirmación de pago. El alcance se limita a lo incluido en el plan seleccionado.</div>
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul class="footer-links">
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#formulario">Iniciar proyecto</a></li>
+          <li><a href="#faq">Soporte / FAQ</a></li>
+        </ul>
       </div>
     </div>
+
+    <hr class="footer-line"/>
+
+    <div class="footer-important">
+      <strong>Importante:</strong> El tiempo de entrega de 72 horas inicia cuando el pago está confirmado y
+      recibimos todo el material requerido (contenido, imágenes, logo, etc.). Los tiempos pueden variar
+      según complejidad y alcance. Incluye una ronda de ajustes menores. Cambios adicionales fuera del
+      alcance se cotizan por separado.
+    </div>
+
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Hakunna Digital. Todos los derechos reservados.</div>
+      <div class="footer-legal">
+        <a href="#">Política de privacidad</a>
+        <span>•</span>
+        <a href="#">Términos del servicio</a>
+      </div>
+    </div>
+  </div>
+
   </footer>
 
   <script>
@@ -1314,7 +1580,8 @@
     // WhatsApp links
     const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
-    const waButtons = ["waTop","waHero","waPayment","waFinal","waFromForm"];
+    const waButtons = ["waTop","waHero","waPayment","waFinal","waFromForm","waCtaHero","waFooterLink"];
+
     waButtons.forEach(id => {
       const el = document.getElementById(id);
       if (el) el.href = waLink(WHATSAPP_PREFILL);
@@ -1462,4 +1729,5 @@
   </script>
 </body>
 </html>
+
 
